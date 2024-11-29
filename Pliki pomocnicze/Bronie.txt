@@ -1,0 +1,11 @@
+<p><strong>Mistsplitter Reforged</strong></p>
+<p> Gain a 12% Elemental DMG Bonus for a character's Elemental Type. At stacks 1/2/3, Elemental DMG is further increased by 8/16/28%. Each stack has an individual duration and are gotten through:</p>
+<p>• Normal Attacks with Elemental DMG (duration 5s))</p>
+<p>• Casting an Elemental Burst (duration 10s)</p>
+<p>• Having less than 100% Energy (disappears at full Energy)</p>
+
+<p><strong>Thundering Pulse</strong></p>
+<p> Increases ATK by 20% and grants Thunder Emblem. At stacks 1/2/3, Normal Attack DMG is further increased by 12/24/40%. Each stack has an individual duration and are gotten through:</p>
+<p>• Normal Attacks with Elemental DMG (duration 5s)</p>
+<p>• Casting an Elemental Skill (duration 10s)</p>
+<p>• Having less than 100% Energy (disappears at full Energy)</p>

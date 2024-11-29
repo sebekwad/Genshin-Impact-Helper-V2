@@ -1,0 +1,230 @@
+<section id="Ororon" class="character-content">
+    <div class="subtabs">
+        <button class="subtab-button" data-subtab="weapons-Ororon"><i class="fas fa-sword"></i> Weapons</button>
+        <button class="subtab-button" data-subtab="artifacts-Ororon"><i class="fas fa-gem"></i> Artifacts</button>
+        <button class="subtab-button" data-subtab="teams-Ororon"><i class="fas fa-users"></i> Teams</button>
+        <button class="subtab-button" data-subtab="strengths-weaknesses-Ororon"><i class="fas fa-star"></i> Strengths & Weaknesses</button>
+    </div>
+
+    <!-- Weapons Section -->
+    <article id="weapons-Ororon" class="subtab-content">
+        <h2>Ororon's Weapons</h2>
+        <div class="build-columns">
+            <!-- Dendro Main DPS Weapons -->
+            <div class="build-column">
+                <h3>Dendro Main DPS</h3>
+                <h4>Best Weapon</h4>
+				<div class="weapon-item">
+				<img src="Bronie/Light of Foliar Incision.png" alt="Uraku Misugiri" class="weapon-image">
+                <p><strong>.....</strong></p>
+				</div>
+                <p>.....<p>
+                
+                <h4>Alternative Weapons</h4>
+                <ul>
+                    <div class="weapon-item">
+					<img src="Bronie/Uraku Misugiri.png" alt="Uraku Misugiri" class="weapon-image">
+					<p><strong>.....</strong></div> .....</p>
+					
+					<div class="weapon-item">
+					<img src="Bronie/Primordial Jade Cutter.png" alt="Uraku Misugiri" class="weapon-image">
+					<p><strong>.....</strong></div> .....</p>
+					
+					
+					<div class="weapon-item">
+					<img src="Bronie/Wolf-Fang.png" alt="Uraku Misugiri" class="weapon-image">
+					<p><strong>.....</strong></div> .....</p>
+                    
+					
+					<div class="weapon-item">
+					<img src="Bronie/Iron Sting.png" alt="Uraku Misugiri" class="weapon-image">
+					<p><strong>.....</strong></div> .....</p>
+                    
+					<!-- Other weapons -->
+                </ul>
+				<div class="weapon-comment">
+                <p><strong>Comment</strong></p>
+                <p>.....</p>
+                </div>
+            </div>
+            
+            <!-- Solo Dendro Main DPS Weapons -->
+            <div class="build-column">
+                <h3>Solo Dendro Main DPS</h3>
+                <h4>Best Weapon</h4>
+				<div class="weapon-item">
+				<img src="Bronie/Light of Foliar Incision.png" alt="Błąd obrazu" class="weapon-image">
+                <p><strong>.....</strong></p>
+				</div>
+                <p>.....<p>
+                
+                <h4>Alternative Weapons</h4>
+                <ul>
+				    <div class="weapon-item">
+				    <img src="Bronie/Uraku Misugiri.png" alt="Błąd obrazu" class="weapon-image">
+                    <p><strong>.....</strong></div>.....</p>
+                    
+					<div class="weapon-item">
+				    <img src="Bronie/Primordial Jade Cutter.png" alt="Błąd obrazu" class="weapon-image">
+					<p><strong>.....</strong></div>.....</p>
+					
+					<div class="weapon-item">
+				    <img src="Bronie/Wolf-Fang.png" alt="Błąd obrazu" class="weapon-image">
+					<p><strong>.....</strong></div>.....</p>
+                    
+					<div class="weapon-item">
+				    <img src="Bronie/Iron Sting.png" alt="Błąd obrazu" class="weapon-image">
+					<p><strong>.....</strong></div>.....</p>
+                    <!-- Other weapons -->
+                </ul>
+				<div class="weapon-comment">
+                <p><strong>Comment</strong></p>
+                <p>.....</p>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- Artifacts Section -->
+    <article id="artifacts-Ororon" class="subtab-content">
+        <h2>Ororon's Artifacts</h2>
+        <div class="build-columns">
+            <!-- Dendro Main DPS Artifacts -->
+            <div class="build-column">
+                <h3>Dendro Main DPS</h3>
+                <h4>Best Artifact Set</h4>
+				<div class="artifact-item">
+					<img src="Artefakty/Gilded Dreams.png" alt="Błąd obrazu" class="artifact-image">
+                <p><strong>Gilded Dreams</strong></p></div>
+                <p>2-Piece: .....</p> 
+                <p>4-Piece: .....</p>
+
+                <h4>Main Stats</h4>
+                <ul>
+                    <li><strong>Sands:</strong> Elemental Mastery</li>
+                    <li><strong>Goblet:</strong> Dendro DMG Bonus</li>
+                    <li><strong>Circlet:</strong> CRIT Rate/CRIT DMG</li>
+                </ul>
+				<h3>Sub Stats</h3>
+                    <ul>
+                        <li>CRIT Rate/CRIT DMG</li>
+                        <li>Energy Recharge</li>
+                        <li>ATK%</li>
+                    </ul>
+				
+                <div class="artifact-comment">
+                <p><strong>Comment</strong></p>
+                <p>.....</p>
+                </div>
+				
+				</div>
+            <!-- Solo Dendro Main DPS Artifacts -->
+            <div class="build-column">
+                <h3>Solo Dendro Main DPS</h3>
+                <h4>Best Artifact Set</h4>
+				<div class="artifact-item">
+					<img src="Artefakty/Deepwood Memories.png" alt="Uraku Misugiri" class="artifact-image">
+                <p><strong>Deepwood Memories</strong></p></div>
+                <p>2-Piece: .....</p> 
+                <p>4-Piece: .....</p>
+
+                <h4>Main Stats</h4>
+                <ul>
+                    <li><strong>Sands:</strong> Elemental Mastery</li>
+                    <li><strong>Goblet:</strong> Dendro DMG Bonus</li>
+                    <li><strong>Circlet:</strong> CRIT Rate/CRIT DMG</li>
+                </ul>
+				<h3>Sub Stats</h3>
+                    <ul>
+                        <li>CRIT Rate/CRIT DMG</li>
+                        <li>Energy Recharge</li>
+                        <li>ATK%</li>
+                    </ul>
+            
+                <div class="artifact-comment">
+                <p><strong>Comment</strong></p>
+                <p>.....</p>
+                </div>
+				
+				</div>
+        </div>
+    </article>
+	<article id="teams-Ororon" class="subtab-content">
+        <h2>Ororon's Teams</h2>
+        <div class="team-list">
+        <!-- Quickbloom Team -->
+        <div class="team">
+            <h3>Quickbloom 1 Team</h3>
+            <div class="team-container">
+                <div class="team-role">
+                    <img src="Alhaitham.png" alt="Alhaitham" class="character-image">
+                    <p data-character="Alhaitham">Alhaitham</p>
+                    <p>Main DPS</p>
+                </div>
+                <div class="team-role">
+                    <img src="Nahida.png" alt="Nahida" class="character-image">
+                    <p data-character="Nahida">Nahida</p>
+                    <p>Sub-DPS</p>
+                </div>
+                <div class="team-role">
+                    <img src="Shinobu.png" alt="Shinobu" class="character-image">
+                    <p data-character="Shinobu">Shinobu</p>
+                    <p>Sub-DPS/Support</p>
+                </div>
+                <div class="team-role">
+                    <img src="Yelan.png" alt="Yelan" class="character-image">
+                    <p data-character="Yelan">Yelan</p>
+                    <p>Sub-DPS</p>
+                </div>
+            </div>
+			<p class="team-comment">.....</p>
+        </div>
+		<div class="team">
+            <h3>Quickbloom 2 Team</h3>
+            <div class="team-container">
+                <div class="team-role">
+                    <img src="Alhaitham.png" alt="Alhaitham" class="character-image">
+                    <p data-character="Alhaitham">Alhaitham</p>
+                    <p>Main DPS</p>
+                </div>
+                <div class="team-role">
+                    <img src="Yelan.png" alt="Yelan" class="character-image">
+                    <p data-character="Yelan">Yelan</p>
+                    <p>Sub-DPS</p>
+                </div>
+                <div class="team-role">
+                    <img src="Baizhu.png" alt="Baizhu" class="character-image">
+                    <p data-character="Baizhu">Baizhu</p>
+                    <p>Sub-DPS/Support</p>
+                </div>
+                <div class="team-role">
+                    <img src="Shinobu.png" alt="Shinobu" class="character-image">
+                    <p data-character="Shinobu">Shinobu</p>
+                    <p>Sub-DPS</p>
+                </div>
+            </div>
+			<p class="team-comment">.....</p>
+        </div>
+        <!-- Inne drużyny -->
+    </div>
+    </article>
+    <article id="strengths-weaknesses-Ororon" class="subtab-content">
+        <h2>Ororon's Strengths & Weaknesses</h2>
+        <div class="strengths-weaknesses">
+                    <h3>Strengths</h3>
+                    <ul>
+                        <li>.....</li>
+                        <li>.....</li>
+                        <li>.....</li>
+						<li>.....</li>
+                    </ul>
+                    <h3>Weaknesses</h3>
+                    <ul>
+                        <li>.....</li>
+                        <li>.....</li>
+                    </ul>
+                </div>
+    </article>
+
+    <!-- Other Sections (Teams, Strengths & Weaknesses) -->
+</section>

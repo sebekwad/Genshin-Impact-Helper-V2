@@ -1,0 +1,168 @@
+<section id="Furina" class="character-content">
+    <div class="subtabs">
+        <button class="subtab-button" data-subtab="weapons-Furina"><i class="fas fa-sword"></i> Weapons</button>
+        <button class="subtab-button" data-subtab="artifacts-Furina"><i class="fas fa-gem"></i> Artifacts</button>
+        <button class="subtab-button" data-subtab="teams-Furina"><i class="fas fa-users"></i> Teams</button>
+        <button class="subtab-button" data-subtab="strengths-weaknesses-Furina"><i class="fas fa-star"></i> Strengths & Weaknesses</button>
+    </div>
+
+    <!-- Weapons Section -->
+    <article id="weapons-Furina" class="subtab-content">
+        <h2>Furina's Weapons</h2>
+        <div class="build-columns">
+            <!-- Golden Troupe Hydro DPS Weapons -->
+            <div class="build-column">
+                <h3>Golden Troupe Hydro DPS</h3>
+                <h4>Best Weapon</h4>
+				<div class="weapon-item">
+				        <img src="Bronie/Splendor of Tranquil Waters.png" alt="Błąd obrazu" class="weapon-image">
+                <p><strong>.....</strong></p></div>
+                <p>.....<p>
+                
+                <h4>Alternative Weapons</h4>
+                <ul>
+                    <div class="weapon-item">
+				        <img src="Bronie/Key of Khaj-Nisut.png" alt="Błąd obrazu" class="weapon-image">
+					<p><strong>.....</strong></p></div>
+					<p> .....<p>
+                    
+					<div class="weapon-item">
+				        <img src="Bronie/Festering Desire.png" alt="Błąd obrazu" class="weapon-image">
+					<p><strong>.....</strong></p></div>
+					<p>.....<p>
+					
+					<div class="weapon-item">
+				        <img src="Bronie/Wolf-Fang.png" alt="Błąd obrazu" class="weapon-image">
+					<p><strong>.....</strong></p></div>
+					<p>.....<p>
+                    
+					<div class="weapon-item">
+				        <img src="Bronie/Fleuve Cendre Ferryman.png" alt="Błąd obrazu" class="weapon-image">
+					<p><strong>.....</strong></p></div>
+					<p>.....<p>
+                    <!-- Other weapons -->
+                </ul>
+            
+			<div class="weapon-comment">
+                <p><strong>Comment</strong></p>
+                <p>.....</p>
+				<p>.....</p>
+                </div>
+			
+			</div>
+        </div>
+    </article>
+
+    <!-- Artifacts Section -->
+    <article id="artifacts-Furina" class="subtab-content">
+        <h2>Furina's Artifacts</h2>
+        <div class="build-columns">
+            <!-- Golden Troupe Hydro DPS Artifacts -->
+            <div class="build-column">
+                <h3>Golden Troupe Hydro DPS</h3>
+                <h4>Best Artifact Set</h4>
+				<div class="artifact-item">
+					<img src="Artefakty/Golden Troupe.png" alt="Błąd obrazu" class="artifact-image">
+                <p><strong>.....</strong></p></div>
+                <p>2-Piece: .....</p>
+				<p>4-Piece: .....</p>
+
+                <h4>Main Stats</h4>
+                <ul>
+                    <li><strong>Sands:</strong> .....</li>
+                    <li><strong>Goblet:</strong> .....</li>
+                    <li><strong>Circlet:</strong> .....</li>
+                </ul>
+				<h3>Sub Stats</h3>
+                    <ul>
+                        <li>.....</li>
+                        <li>.....</li>
+                        <li>.....</li>
+						<li>.....</li>
+                    </ul>
+                
+                <div class="artifact-comment">
+                <p><strong>Comment</strong></p>
+                <p>.....</p>
+				<p>.....</p>
+                </div>
+				
+				</div>
+        </div>
+    </article>
+	<article id="teams-Furina" class="subtab-content">
+        <h2>Furina's Teams</h2>
+        <div class="team-list">
+        <!-- Quickbloom Team -->
+        <div class="team">
+            <h3>HP-Drain 1 Team</h3>
+            <div class="team-container">
+                <div class="team-role">
+                    <img src="Furina.png" alt="Barbara" class="character-image">
+                    <p data-character="Furina">Furina</p>
+                    <p>Sub-DPS/Support</p>
+                </div>
+                <div class="team-role">
+                    <img src="Neuvillette.png" alt="Barbara" class="character-image">
+                    <p data-character="Neuvillette">Neuvillette</p>
+                    <p>Main DPS</p>
+                </div>
+                <div class="team-role">
+                    <img src="Kazuha.png" alt="Barbara" class="character-image">
+                    <p data-character="Kazuha">Kazuha</p>
+                    <p>Sub-DPS</p>
+                </div>
+                <div class="team-role">
+                    <img src="Baizhu.png" alt="Barbara" class="character-image">
+                    <p data-character="Baizhu">Baizhu</p>
+                    <p>Support</p>
+                </div>
+            </div>
+			<p class="team-comment">.....</p>
+        </div>
+		<div class="team">
+            <h3>HP-Drain 2 Team</h3>
+            <div class="team-container">
+                <div class="team-role">
+                    <img src="Furina.png" alt="Barbara" class="character-image">
+                    <p data-character="Furina">Furina</p>
+                    <p>Sub-DPS/Support</p>
+                </div>
+                <div class="team-role">
+                    <img src="Wriothesley.png" alt="Barbara" class="character-image">
+                    <p data-character="Wriothesley">Wriothesley</p>
+                    <p>Main DPS</p>
+                </div>
+                <div class="team-role">
+                    <img src="Kazuha.png" alt="Barbara" class="character-image">
+                    <p data-character="Kazuha">Kazuha</p>
+                    <p>Sub-DPS</p>
+                </div>
+                <div class="team-role">
+                    <img src="Charlotte.png" alt="Barbara" class="character-image">
+                    <p data-character="Charlotte">Charlotte</p>
+                    <p>Support</p>
+                </div>
+            </div>
+			<p class="team-comment">.....</p>
+        </div>
+    </div>
+    </article>
+    <article id="strengths-weaknesses-Furina" class="subtab-content">
+        <h2>Furina's Strengths & Weaknesses</h2>
+        <div class="strengths-weaknesses">
+                    <h3>Strengths</h3>
+                    <ul>
+                        <li>.....</li>
+                        <li>.....</li>
+                        <li>.....</li>
+						<li>.....</li>
+                    </ul>
+                    <h3>Weaknesses</h3>
+                    <ul>
+                        <li>.....</li>
+                        <li>.....</li>
+                    </ul>
+                </div>
+    </article>
+</section>
