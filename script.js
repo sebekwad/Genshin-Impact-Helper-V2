@@ -192,56 +192,67 @@ document.addEventListener('DOMContentLoaded', () => {
 
     
 	
-    const characterFilter = document.getElementById('character-filter');
-    const roleFilter = document.getElementById('role-filter');
-    const teams = document.querySelectorAll('.team');
+    // Funkcja do filtrowania drużyn na podstawie wielu postaci i ról
+function filterTeamsByExactCharacters() {
+    const characterFilters = Array.from(document.querySelectorAll('.character-filter')); // Pobierz filtry postaci
+    const roleFilters = Array.from(document.querySelectorAll('.role-filter')); // Pobierz filtry ról
+    const teams = document.querySelectorAll('.team'); // Wszystkie drużyny
+    const noTeamsMessage = document.getElementById('no-teams-message'); // Element z wiadomością "No teams matching your criteria"
 
-    // Funkcja filtrowania drużyn
-    function filterTeams() {
-        const selectedCharacter = characterFilter.value.trim();
-        const selectedRole = roleFilter.value.trim();
+    let visibleTeamsCount = 0; // Licznik widocznych drużyn
 
-        
+    teams.forEach(team => {
+        let matchesAllFilters = true; // Załóż, że drużyna spełnia wszystkie warunki
 
-        teams.forEach(team => {
-            let isVisible = false;
+        // Iteracja po wszystkich filtrach (maksymalnie 4)
+        for (let i = 0; i < characterFilters.length; i++) {
+            const selectedCharacter = characterFilters[i].value.trim(); // Wybrana postać
+            const selectedRole = roleFilters[i].value.trim(); // Wybrana rola
 
-            // Iteracja po wszystkich postaciach w drużynie
-            team.querySelectorAll('.team-role').forEach(roleElement => {
-                const characterName = roleElement.querySelector('p[data-character]')?.getAttribute('data-character')?.trim();
+            // Jeśli filtr jest pusty, pomijamy go
+            if (!selectedCharacter && !selectedRole) continue;
+
+            // Sprawdź, czy postać z wybraną rolą znajduje się w drużynie
+            const matchingRole = Array.from(team.querySelectorAll('.team-role')).some(roleElement => {
+                const characterName = roleElement.querySelector('p[data-character]')?.textContent?.trim();
                 const characterRole = roleElement.querySelector('p:nth-of-type(2)')?.textContent?.trim();
 
-                
-
-                // Sprawdź, czy postać i rola pasują w ramach jednego roleElement
-                if (
+                return (
                     (!selectedCharacter || characterName === selectedCharacter) &&
                     (!selectedRole || characterRole === selectedRole)
-                ) {
-                    isVisible = true;
-                }
+                );
             });
 
-            // Pokaż lub ukryj drużynę na podstawie widoczności
-            if (isVisible) {
-                
-                team.style.display = '';
-            } else {
-                
-                team.style.display = 'none';
+            // Jeśli nie znaleziono pasującej postaci, drużyna nie spełnia warunków
+            if (!matchingRole) {
+                matchesAllFilters = false;
+                break;
             }
-        });
+        }
+
+        // Pokaż drużynę, jeśli spełnia wszystkie warunki
+        if (matchesAllFilters) {
+            team.style.display = '';
+            visibleTeamsCount++;
+        } else {
+            team.style.display = 'none';
+        }
+    });
+
+    // Jeśli nie ma drużyn spełniających kryteria, wyświetl wiadomość
+    if (visibleTeamsCount === 0) {
+        noTeamsMessage.style.display = 'block';
+    } else {
+        noTeamsMessage.style.display = 'none';
     }
+}
 
-    // Obsługa zmiany wyboru w filtrach
-    characterFilter.addEventListener('change', filterTeams);
-    roleFilter.addEventListener('change', filterTeams);
+// Obsługa zmiany w dowolnym filtrze
+document.querySelectorAll('.character-filter, .role-filter').forEach(filter => {
+    filter.addEventListener('change', filterTeamsByExactCharacters);
+});
 
-    // Wywołanie filtrowania po załadowaniu strony
-    filterTeams();
-	
-	
-	
+
 	// Aktualizacja wyświetlania drużyn z uwzględnieniem duplikatów
     function updateTeamsDisplay() {
         const teamArticle = document.querySelector('article#teams-TEAMS.subtab-content');
