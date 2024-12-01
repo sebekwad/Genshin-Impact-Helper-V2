@@ -403,3 +403,11 @@ button:hover {
     padding: 5px;
     font-size: 14px;
 }
+
+.hide-letter {
+  font-size: 0; /* Ukrywa tekst, ale nie wpływa na układ */
+}
+
+.hide-letter img {
+  vertical-align: middle; /* Upewnij się, że obrazek jest w odpowiedniej pozycji */
+}
