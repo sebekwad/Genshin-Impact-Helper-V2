@@ -18,21 +18,54 @@
         <!-- Pasek boczny z filtrami i listami postaci -->
         <nav class="sidebar">
             <h2>Characters</h2>
-            <input type="text" id="character-search" placeholder="Search for characters...">
             <div id="filters">
-                <select id="filter-element">
-                    <option value="">Element</option>
-                    <option value="Geo">Geo</option>
-                    <option value="Dendro">Dendro</option>
-                    <!-- Dodaj inne elementy -->
-                </select>
+                <input type="text" id="character-search" placeholder="Search for characters...">
                 <select id="filter-role">
                     <option value="">Role</option>
-                    <option value="DPS">DPS</option>
+                    <option value="Main DPS">Main DPS</option>
+					<option value="Sub-DPS">Sub-DPS</option>
+                    <option value="Support">Support</option>
                     <!-- Dodaj inne role -->
                 </select>
-                <button id="toggleSidebar">⮜</button>
+                <select id="filter-rating">
+                    <option value="">Rating</option>
+                    <option value="SS">SS</option>
+					<option value="S">S</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+                    <!-- Dodaj inne oceny -->
+                </select>
+                <select id="filter-rarity">
+                    <option value="">Rarity</option>
+                    <option value="★★★★★">★★★★★</option>
+                    <option value="★★★★">★★★★</option>
+                    <!-- Dodaj inne poziomy rzadkości -->
+                </select>
+                <select id="filter-weapon">
+                    <option value="">Weapon</option>
+                    <option value="Bow">Bow</option>
+					<option value="Catalyst">Catalyst</option>
+					<option value="Claymore">Claymore</option>
+					<option value="Polearm">Polearm</option>
+					<option value="Sword">Sword</option>
+                    <!-- Dodaj inne typy broni -->
+                </select>
+                <select id="filter-element">
+                    <option value="">Element</option>
+                    <option value="Anemo">Anemo</option>
+                    <option value="Cryo">Cryo</option>
+					<option value="Dendro">Dendro</option>
+					<option value="Electro">Electro</option>
+					<option value="Geo">Geo</option>
+					<option value="Hydro">Hydro</option>
+					<option value="Pyro">Pyro</option>
+                    <!-- Dodaj inne elementy -->
+                </select>
             </div>
+
+			<button id="toggleSidebar">⮜</button>
             <ul class="character-list">
                 <li>
                     <button class="tab-button" data-character="Albedo" data-tooltip="Albedo: Geo, Sub-DPS">
@@ -736,7 +769,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/B.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">B<img src="Rating Icons/B.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -1065,7 +1098,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/SS.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">SS<img src="Rating Icons/SS.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -1514,7 +1547,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/D.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">D<img src="Rating Icons/D.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -1693,7 +1726,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/D.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">D<img src="Rating Icons/D.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -1878,7 +1911,7 @@
 		<div class="team">
             <h3>Amber Burst Support 2 Team</h3>
             <div class="team-container">
-<div class="team-role">
+                <div class="team-role">
                     <img src="Amber.png" alt="Amber" class="character-image">
                     <p data-character="Amber">Amber</p>
                     <p>Support</p>
@@ -1998,7 +2031,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/SS.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">SS<img src="Rating Icons/SS.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -2470,7 +2503,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/S.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">S<img src="Rating Icons/S.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -2675,7 +2708,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/A.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">A<img src="Rating Icons/A.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -3184,7 +3217,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/SS.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">SS<img src="Rating Icons/SS.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -3765,7 +3798,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/C.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">C<img src="Rating Icons/C.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -4045,7 +4078,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/A.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">A<img src="Rating Icons/A.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -4347,7 +4380,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/SS.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">SS<img src="Rating Icons/SS.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -4880,7 +4913,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/C.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">C<img src="Rating Icons/C.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -5208,7 +5241,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/A.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">A<img src="Rating Icons/A.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -5642,7 +5675,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/A.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">A<img src="Rating Icons/A.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -6162,7 +6195,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/S.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">S<img src="Rating Icons/S.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -6671,7 +6704,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/S.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">S<img src="Rating Icons/S.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -6991,7 +7024,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/C.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">C<img src="Rating Icons/C.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -7399,7 +7432,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/S.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">S<img src="Rating Icons/S.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -7841,7 +7874,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/A.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">A<img src="Rating Icons/A.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -8192,7 +8225,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/B.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">B<img src="Rating Icons/B.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -8569,7 +8602,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/B.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">B<img src="Rating Icons/B.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -9234,7 +9267,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/A.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">A<img src="Rating Icons/A.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -9550,7 +9583,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/A.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">A<img src="Rating Icons/A.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -9848,7 +9881,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/C.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">C<img src="Rating Icons/C.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -10216,7 +10249,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/S.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">S<img src="Rating Icons/S.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -10679,7 +10712,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/B.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">B<img src="Rating Icons/B.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -10986,7 +11019,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/S.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">S<img src="Rating Icons/S.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -11478,7 +11511,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/S.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">S<img src="Rating Icons/S.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -11883,7 +11916,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/C.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">C<img src="Rating Icons/C.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -12388,7 +12421,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/SS.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">SS<img src="Rating Icons/SS.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -13166,11 +13199,11 @@
                     <table class="info-details-table">
                         <tr>
                             <td><strong>Role:</strong></td>
-                            <td>Support</td>
+                            <td>Main DPS</td>
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/S.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">S<img src="Rating Icons/S.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -13753,7 +13786,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/A.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">A<img src="Rating Icons/A.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -14187,7 +14220,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/A.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">A<img src="Rating Icons/A.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -14428,7 +14461,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/C.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">C<img src="Rating Icons/C.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -14745,7 +14778,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/S.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">S<img src="Rating Icons/S.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -15184,7 +15217,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/B.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">B<img src="Rating Icons/B.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -15427,7 +15460,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/S.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">S<img src="Rating Icons/S.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -15863,7 +15896,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/C.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">C<img src="Rating Icons/C.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -16187,7 +16220,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/C.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">C<img src="Rating Icons/C.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -16623,7 +16656,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/C.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">C<img src="Rating Icons/C.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -17214,7 +17247,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/SS.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">SS<img src="Rating Icons/SS.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -17701,7 +17734,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/B.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">B<img src="Rating Icons/B.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -18049,7 +18082,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/S.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">S<img src="Rating Icons/S.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -18467,7 +18500,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/B.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">B<img src="Rating Icons/B.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -19064,7 +19097,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/C.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">C<img src="Rating Icons/C.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -19440,7 +19473,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/SS.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">SS<img src="Rating Icons/SS.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -19857,7 +19890,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/B.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">B<img src="Rating Icons/B.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -20395,7 +20428,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/B.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">B<img src="Rating Icons/B.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -20755,7 +20788,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/B.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">B<img src="Rating Icons/B.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -21070,7 +21103,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/S.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">S<img src="Rating Icons/S.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -21463,7 +21496,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/B.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">B<img src="Rating Icons/B.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -21697,7 +21730,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/S.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">S<img src="Rating Icons/S.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -22107,7 +22140,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/S.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">S<img src="Rating Icons/S.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -22421,7 +22454,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/SS.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">SS<img src="Rating Icons/SS.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -23031,7 +23064,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/S.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">S<img src="Rating Icons/S.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -23521,7 +23554,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/SS.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">SS<img src="Rating Icons/SS.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -23981,7 +24014,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/S.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">S<img src="Rating Icons/S.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -24401,7 +24434,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/C.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">C<img src="Rating Icons/C.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -24621,7 +24654,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/B.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">B<img src="Rating Icons/B.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -24968,7 +25001,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/A.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">A<img src="Rating Icons/A.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -25373,7 +25406,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/C.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">C<img src="Rating Icons/C.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -25643,7 +25676,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/SS.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">SS<img src="Rating Icons/SS.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -26050,7 +26083,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/D.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">D<img src="Rating Icons/D.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -26366,7 +26399,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/A.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">A<img src="Rating Icons/A.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -26755,7 +26788,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/A.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">A<img src="Rating Icons/A.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -27041,7 +27074,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/B.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">B<img src="Rating Icons/B.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -27493,7 +27526,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/B.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">B<img src="Rating Icons/B.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -27810,7 +27843,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/S.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">S<img src="Rating Icons/S.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -28095,7 +28128,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/S.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">S<img src="Rating Icons/S.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -28491,7 +28524,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/B.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">B<img src="Rating Icons/B.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -29051,7 +29084,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/S.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">S<img src="Rating Icons/S.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -29366,7 +29399,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/A.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">A<img src="Rating Icons/A.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -29615,7 +29648,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/B.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">B<img src="Rating Icons/B.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -29970,7 +30003,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/A.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">A<img src="Rating Icons/A.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -30235,7 +30268,8 @@
                             </tr>
                             <tr>
                                 <td><strong>Rating:</strong></td>
-                                <td><img src="Rating Icons/D.png" alt="Błąd obrazu" class="rating-image"></td>
+                                <td class="hide-letter">B<img src="Rating Icons/B.png" alt="Błąd obrazu" class="rating-image"></td>
+								<td><img src="Rating Icons/D.png" alt="Błąd obrazu" class="rating-image"></td>
                             </tr>
                             <tr>
                                 <td><strong>Rarity:</strong></td>
@@ -30267,7 +30301,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/D.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">D<img src="Rating Icons/D.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -30460,7 +30494,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/D.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">D<img src="Rating Icons/D.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -30650,7 +30684,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/B.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">B<img src="Rating Icons/B.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -30831,7 +30865,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/A.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">A<img src="Rating Icons/A.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -31153,7 +31187,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/D.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">D<img src="Rating Icons/D.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -31513,7 +31547,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/A.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">A<img src="Rating Icons/A.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -31855,7 +31889,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/A.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">A<img src="Rating Icons/A.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -32331,7 +32365,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/S.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">S<img src="Rating Icons/S.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -32684,7 +32718,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/SS.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">SS<img src="Rating Icons/SS.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -33130,7 +33164,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/S.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">S<img src="Rating Icons/S.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -33711,7 +33745,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/A.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">A<img src="Rating Icons/A.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -34031,7 +34065,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/SS.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">SS<img src="Rating Icons/SS.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -34557,7 +34591,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/SS.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">SS<img src="Rating Icons/SS.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -34758,7 +34792,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/D.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">D<img src="Rating Icons/D.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -35077,7 +35111,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/S.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">S<img src="Rating Icons/S.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -35464,7 +35498,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/C.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">C<img src="Rating Icons/C.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -35869,7 +35903,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/A.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">A<img src="Rating Icons/A.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -36482,7 +36516,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/SS.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">SS<img src="Rating Icons/SS.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -36907,7 +36941,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/B.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">B<img src="Rating Icons/B.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -37330,7 +37364,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/A.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">A<img src="Rating Icons/A.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
@@ -37710,7 +37744,7 @@
                         </tr>
                         <tr>
                             <td><strong>Rating:</strong></td>
-                            <td><img src="Rating Icons/SS.png" alt="Błąd obrazu" class="rating-image"></td>
+                            <td class="hide-letter">SS<img src="Rating Icons/SS.png" alt="Błąd obrazu" class="rating-image"></td>
                         </tr>
                         <tr>
                             <td><strong>Rarity:</strong></td>
