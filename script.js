@@ -34,6 +34,15 @@ document.addEventListener('DOMContentLoaded', () => {
         filter.addEventListener('change', filterCharacters);
     });
 	
+	/// Nasłuchiwacze dla filtrów żywiołów
+    const teamElementFilters = document.querySelectorAll('.team-element-filter');
+    teamElementFilters.forEach(filter => {
+        filter.addEventListener('change', applyTeamFilters);
+    });
+
+    // Nasłuchiwacz dla filtru "Tylko pełne drużyny"
+    document.getElementById('filter-owned').addEventListener('change', applyTeamFilters);
+	
 	// Funkcja do automatycznego otwierania pierwszej podzakładki
     function openFirstSubtab(characterId) {
         const characterSection = document.getElementById(characterId);
@@ -427,3 +436,78 @@ function filterCharacters() {
     });
 }
 });
+
+function escapeSelector(selector) {
+    return CSS.escape(selector);
+}
+
+function applyTeamFilters() {
+    console.log("Uruchomiono funkcję kombinacji filtrów!");
+
+    const teamElementFilters = Array.from(document.querySelectorAll('.team-element-filter'));
+    const filterOwnedCheckbox = document.getElementById('filter-owned');
+    const teams = document.querySelectorAll('.team');
+    let visibleTeamsCount = 0;
+
+    teams.forEach(team => {
+        let matchesAllFilters = true;
+
+        // Filtracja według żywiołów
+        const selectedElements = teamElementFilters.map(filter => filter.value.trim()).filter(Boolean);
+
+        if (selectedElements.includes("OnlyPreviousThree")) {
+            const firstThreeElements = selectedElements.slice(0, 3); // Pobierz trzy pierwsze wybrane żywioły
+            const teamMembersElements = Array.from(team.querySelectorAll('.team-role p[data-character]')).map(member => {
+                const characterName = member.getAttribute('data-character');
+                const characterInfo = document.querySelector(`#info-${CSS.escape(characterName)}`);
+                if (characterInfo) {
+                    const elementCell = characterInfo.querySelector('td img.element-image');
+                    return elementCell?.parentNode?.textContent?.trim()?.replace(/^\s*Błąd obrazu\s*/, '') || '';
+                }
+                return '';
+            });
+
+            if (teamMembersElements.some(memberElement => !firstThreeElements.includes(memberElement))) {
+                matchesAllFilters = false;
+            }
+        } else {
+            teamElementFilters.forEach(filter => {
+                const selectedElement = filter.value.trim();
+                if (!selectedElement) return;
+
+                const teamMembers = Array.from(team.querySelectorAll('.team-role p[data-character]')).map(member => {
+                    const characterName = member.getAttribute('data-character');
+                    const characterInfo = document.querySelector(`#info-${CSS.escape(characterName)}`);
+                    if (characterInfo) {
+                        const elementCell = characterInfo.querySelector('td img.element-image');
+                        return elementCell?.parentNode?.textContent?.trim()?.replace(/^\s*Błąd obrazu\s*/, '') || '';
+                    }
+                    return '';
+                });
+
+                if (!teamMembers.includes(selectedElement)) {
+                    matchesAllFilters = false;
+                }
+            });
+        }
+
+        // Filtracja według posiadania
+        if (filterOwnedCheckbox.checked && matchesAllFilters) {
+            const teamMembers = Array.from(team.querySelectorAll('.team-role p[data-character]')).map(member => {
+                const characterName = member.getAttribute('data-character');
+                const isOwned = document.querySelector(`.owned-checkbox[data-character="${characterName}"]`)?.checked;
+                return isOwned;
+            });
+
+            if (teamMembers.includes(false)) {
+                matchesAllFilters = false;
+            }
+        }
+
+        // Ustaw widoczność drużyny
+        team.style.display = matchesAllFilters ? '' : 'none';
+        if (matchesAllFilters) visibleTeamsCount++;
+    });
+
+    console.log(`Liczba widocznych drużyn (kombinacja filtrów): ${visibleTeamsCount}`);
+}
