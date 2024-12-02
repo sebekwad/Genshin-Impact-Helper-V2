@@ -404,10 +404,25 @@ button:hover {
     font-size: 14px;
 }
 
+.element-filter {
+    padding: 5px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
 .hide-letter {
   font-size: 0; /* Ukrywa tekst, ale nie wpływa na układ */
 }
 
 .hide-letter img {
   vertical-align: middle; /* Upewnij się, że obrazek jest w odpowiedniej pozycji */
+}
+
+#no-teams-message {
+    display: none;
+    color: red;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
 }
