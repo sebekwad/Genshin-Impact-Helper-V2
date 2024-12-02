@@ -1,27 +1,50 @@
+let characterButtons;
+
 document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.getElementById('theme-toggle');
-    const characterSearch = document.getElementById('character-search');
-    const characterButtons = document.querySelectorAll('.tab-button');
     const characterContents = document.querySelectorAll('.character-content');
     const subtabButtons = document.querySelectorAll('.subtab-button');
     const subtabContents = document.querySelectorAll('.subtab-content');
     const ownedCheckboxes = document.querySelectorAll('.owned-checkbox');
     const sidebar = document.querySelector('.sidebar');
     const toggleButton = document.getElementById('toggleSidebar');
-
-    // Funkcja do automatycznego otwierania pierwszej podzakładki
+    const characterSearch = document.getElementById('character-search');
+    const filterRole = document.getElementById('filter-role');
+    const filterRating = document.getElementById('filter-rating');
+    const filterRarity = document.getElementById('filter-rarity');
+    const filterWeapon = document.getElementById('filter-weapon');
+    const filterElement = document.getElementById('filter-element');
+    
+    // Inicjalizuj przyciski po DOMContentLoaded
+    const characterButtons = document.querySelectorAll('.tab-button');
+    if (characterButtons && characterButtons.length > 0) {
+        console.log('Znaleziono przyciski:', characterButtons.length);
+        characterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                console.log(`Kliknięto: ${button.getAttribute('data-character')}`);
+            });
+        });
+    } else {
+        console.warn('Nie znaleziono przycisków .tab-button!');
+    }
+    
+    // Przypisanie nasłuchiwaczy dla filtrów
+    [characterSearch, filterRole, filterRating, filterRarity, filterWeapon, filterElement].forEach(filter => {
+        filter.addEventListener('input', filterCharacters);
+        filter.addEventListener('change', filterCharacters);
+    });
+	
+	// Funkcja do automatycznego otwierania pierwszej podzakładki
     function openFirstSubtab(characterId) {
         const characterSection = document.getElementById(characterId);
-        if (characterSection) {
+        if (characterSection && characterButtons) {
             const firstSubtabButton = characterSection.querySelector('.subtab-button');
             const firstSubtabContent = characterSection.querySelector('.subtab-content');
 
             if (firstSubtabButton && firstSubtabContent) {
-                // Usuń aktywne klasy z innych zakładek i podzakładek
-                subtabButtons.forEach(btn => btn.classList.remove('active'));
+                characterButtons.forEach(btn => btn.classList.remove('active'));
                 characterSection.querySelectorAll('.subtab-content').forEach(content => content.classList.remove('active'));
 
-                // Aktywuj pierwszą podzakładkę
                 firstSubtabButton.classList.add('active');
                 firstSubtabContent.classList.add('active');
             }
@@ -29,35 +52,35 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Obsługa kliknięcia zakładek postaci
-    characterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const characterId = button.getAttribute('data-character');
-            characterButtons.forEach(btn => btn.classList.remove('active'));
-            characterContents.forEach(content => content.classList.remove('active'));
+    if (characterButtons && characterButtons.length > 0) {
+        characterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const characterId = button.getAttribute('data-character');
+                characterButtons.forEach(btn => btn.classList.remove('active'));
+                characterContents.forEach(content => content.classList.remove('active'));
 
-            // Aktywacja zakładki
-            button.classList.add('active');
-            const characterSection = document.getElementById(characterId);
-            if (characterSection) {
-                characterSection.classList.add('active');
+                button.classList.add('active');
+                const characterSection = document.getElementById(characterId);
+                if (characterSection) {
+                    characterSection.classList.add('active');
+                    openFirstSubtab(characterId);
+                }
 
-                // Automatycznie otwórz pierwszą podzakładkę
-                openFirstSubtab(characterId);
-            }
-
-            // Dostosuj wysokość sidebaru
-            adjustSidebarHeight();
+                adjustSidebarHeight();
+            });
         });
-    });
+    } else {
+        console.error('Brak przycisków .tab-button w DOM!');
+    }
 
-    // Funkcja do dostosowania wysokości sidebaru
+
+
+    // Funkcja dostosowania wysokości sidebaru
     function adjustSidebarHeight() {
         const activeCharacter = document.querySelector('.character-content.active');
-        if (activeCharacter) {
-            const activeHeight = activeCharacter.offsetHeight;
-            sidebar.style.height = `${activeHeight}px`;
-        } else {
-            sidebar.style.height = 'auto';
+        const sidebar = document.querySelector('.sidebar');
+        if (activeCharacter && sidebar) {
+            sidebar.style.height = `${activeCharacter.offsetHeight}px`;
         }
     }
 
@@ -353,4 +376,54 @@ updateTeamsDisplay();
 
     // Wywołanie funkcji do aktualizacji wyświetlania drużyn po załadowaniu strony
     updateTeamsDisplay();
+
+function getCharacterInfo(characterId) {
+    const infoSection = document.getElementById(`info-${characterId}`);
+    if (!infoSection) return {};
+
+    // Pobieranie danych z tabeli szczegółów
+    const detailsTable = infoSection.querySelector('.info-details-table');
+    if (!detailsTable) return {};
+
+    const rows = detailsTable.querySelectorAll('tr');
+    const characterInfo = {};
+
+    rows.forEach(row => {
+        const key = row.querySelector('td:first-child')?.textContent?.replace(':', '').trim();
+        const value = row.querySelector('td:last-child')?.textContent?.trim();
+        if (key && value) {
+            characterInfo[key] = value;
+        }
+    });
+
+    return characterInfo;
+}
+
+// Funkcja filtrująca postacie
+function filterCharacters() {
+    const searchQuery = characterSearch.value.toLowerCase();
+    const selectedRole = filterRole.value;
+    const selectedRating = filterRating.value;
+    const selectedRarity = filterRarity.value;
+    const selectedWeapon = filterWeapon.value;
+    const selectedElement = filterElement.value;
+
+    characterButtons.forEach(button => {
+        const characterId = button.getAttribute('data-character');
+        const characterInfo = getCharacterInfo(characterId);
+
+        const matchesSearch = characterId.toLowerCase().includes(searchQuery);
+        const matchesRole = selectedRole ? characterInfo.Role === selectedRole : true;
+        const matchesRating = selectedRating ? characterInfo.Rating === selectedRating : true;
+        const matchesRarity = selectedRarity ? characterInfo.Rarity === selectedRarity : true;
+        const matchesWeapon = selectedWeapon ? characterInfo.Weapon?.includes(selectedWeapon) : true;
+        const matchesElement = selectedElement ? characterInfo.Element?.includes(selectedElement) : true;
+
+        if (matchesSearch && matchesRole && matchesRating && matchesRarity && matchesWeapon && matchesElement) {
+            button.closest('li').style.display = '';
+        } else {
+            button.closest('li').style.display = 'none';
+        }
+    });
+}
 });
